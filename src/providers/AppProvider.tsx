@@ -35,8 +35,10 @@ const AppProvider = ({ children }: AppProviderProps) => {
     >
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <ChakraProvider>
-          <AppHeader />
-          <Router>{children}</Router>
+          <Router>
+            <AppHeader />
+            {children}
+          </Router>
         </ChakraProvider>
       </ErrorBoundary>
     </React.Suspense>

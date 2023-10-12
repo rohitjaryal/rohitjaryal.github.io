@@ -12,11 +12,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
-
-interface Props {
-  children: React.ReactNode;
-  name: string;
-}
+import { NavLink } from "react-router-dom";
 
 const links = [
   {
@@ -33,25 +29,10 @@ const links = [
   },
 ];
 
-const NavLink = (props: Props) => {
-  const { children, name } = props;
-
-  return (
-    <Box
-      as="a"
-      px={2}
-      py={1}
-      rounded={"md"}
-      _hover={{
-        textDecoration: "none",
-        bg: useColorModeValue("gray.200", "gray.700"),
-      }}
-      href={name}
-    >
-      {children}
-    </Box>
-  );
-};
+// const NavLink = (props: Props) => {
+//   const { children, name } = props;
+//   return ;
+// };
 
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -78,7 +59,7 @@ export default function Simple() {
               display={{ base: "none", md: "flex" }}
             >
               {links.map((link) => (
-                <NavLink name={link.name} key={link.name}>
+                <NavLink to={link.name} key={link.name}>
                   {link.label}
                 </NavLink>
               ))}
