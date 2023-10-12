@@ -17,17 +17,14 @@ const routesList = [
     element: <Projects />,
   },
   {
-    path: "/:catchAll(.*)*",
-    redirect: { name: "bio" },
+    path: "/",
+    element: <Bio />,
   },
 ];
 
 const AppRoutes = () => {
-    const route=  useRoutes([...routesList]);
-    return <>
-        {route}
-    </>
-}
-
+  const route = useRoutes([...routesList]);
+  return <>{route}</>;
+};
 
 export default AppRoutes;
