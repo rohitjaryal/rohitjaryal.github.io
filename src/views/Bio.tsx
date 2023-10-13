@@ -1,19 +1,58 @@
 "use client";
 
 import {
-  Box,
+  Button,
+  Center,
   Container,
   Heading,
+  HStack,
+  StackDivider,
   Text,
-  useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
+import {
+  FaConnectdevelop,
+  FaEnvelope,
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa";
 
 const Bio = () => {
   return (
     <Container maxW={"3xl"} p="12">
-      <Heading as="h1">Heya, I'm Rohit Jaryal</Heading>
+      <HStack
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        divider={<StackDivider borderColor="gray.200" />}
+      >
+        <Button colorScheme={"orange"} leftIcon={<FaGithub />}>
+          <Center>
+            <Text>GitHub</Text>
+          </Center>
+        </Button>
+        <Button colorScheme={"orange"} leftIcon={<FaConnectdevelop />}>
+          <Center>
+            <Text>Book my time</Text>
+          </Center>
+        </Button>
+        <Button colorScheme={"orange"} leftIcon={<FaEnvelope />}>
+          <Center>
+            <Text onClick={() => window.open("mailto:contact@rohitjaryal.dev")}>
+              contact@rohitjaryal.dev
+            </Text>
+          </Center>
+        </Button>
+        <Button colorScheme={"orange"} leftIcon={<FaLinkedin />}>
+          <Center>
+            <Text>LinkedIn</Text>
+          </Center>
+        </Button>
+      </HStack>
+
       <VStack paddingTop="40px" spacing="2" alignItems="flex-start">
+        <Heading as="h3" fontSize="x-large">
+          Heya, I'm Rohit Jaryal
+        </Heading>
         <Text as="p" fontSize="lg">
           With years of dedicated frontend development experience under my belt,
           I've had the privilege of transforming creative ideas into functional,
@@ -22,41 +61,19 @@ const Bio = () => {
           of web development
         </Text>
       </VStack>
-      <Box
-        marginTop={{ base: "1", sm: "5" }}
-        display="flex"
-        flexDirection={{ base: "column", sm: "row" }}
-        justifyContent="space-between"
-      >
-        <Box
-          display="flex"
-          flex="1"
-          marginRight="3"
-          position="relative"
-          alignItems="center"
-        >
-          <Box width={{ base: "100%", sm: "85%" }} zIndex="2" marginTop="5%">
-            <Heading marginTop="1">
-              <Text textDecoration="none" _hover={{ textDecoration: "none" }}>
-                Why I Love Frontend Development
-              </Text>
-            </Heading>
-            <Text
-              as="p"
-              marginTop="2"
-              color={useColorModeValue("gray.700", "gray.200")}
-              fontSize="lg"
-            >
-              Frontend development is where art and science collide. It's the
-              perfect blend of creativity and precision, where I get to breathe
-              life into designs and make them accessible to people around the
-              world. Whether it's building an intuitive user interface or
-              optimizing for blazing-fast load times, I relish the challenge of
-              creating seamless online experiences.
-            </Text>
-          </Box>
-        </Box>
-      </Box>
+      <VStack paddingTop="40px" spacing="2" alignItems="flex-start">
+        <Heading as="h5" fontSize="x-large">
+          Why I Love Frontend Development
+        </Heading>
+        <Text as="p" fontSize="lg">
+          Frontend development is where art and science collide. It's the
+          perfect blend of creativity and precision, where I get to breathe life
+          into designs and make them accessible to people around the world.
+          Whether it's building an intuitive user interface or optimizing for
+          blazing-fast load times, I relish the challenge of creating seamless
+          online experiences.
+        </Text>
+      </VStack>
     </Container>
   );
 };

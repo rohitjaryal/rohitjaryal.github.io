@@ -2,6 +2,7 @@ import { useRoutes } from "react-router-dom";
 import Bio from "../views/Bio.tsx";
 import Resume from "../views/Resume.tsx";
 import Projects from "../views/Projects.tsx";
+import NotFound from "../views/NotFound.tsx";
 
 const routesList = [
   {
@@ -19,6 +20,10 @@ const routesList = [
   {
     path: "/",
     element: <Bio />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ];
 
