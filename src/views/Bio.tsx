@@ -10,12 +10,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import {
-  FaConnectdevelop,
-  FaEnvelope,
-  FaGithub,
-  FaLinkedin,
-} from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Bio = () => {
   return (
@@ -27,14 +22,16 @@ const Bio = () => {
       >
         <Button colorScheme={"orange"} leftIcon={<FaGithub />}>
           <Center>
-            <Text>GitHub</Text>
+            <Text onClick={() => window.open("https://github.com/rohitjaryal")}>
+              GitHub
+            </Text>
           </Center>
         </Button>
-        <Button colorScheme={"orange"} leftIcon={<FaConnectdevelop />}>
-          <Center>
-            <Text>Book my time</Text>
-          </Center>
-        </Button>
+        {/*<Button colorScheme={"orange"} leftIcon={<FaConnectdevelop />}>*/}
+        {/*  <Center>*/}
+        {/*    <Text>Book my time</Text>*/}
+        {/*  </Center>*/}
+        {/*</Button>*/}
         <Button colorScheme={"orange"} leftIcon={<FaEnvelope />}>
           <Center>
             <Text onClick={() => window.open("mailto:contact@rohitjaryal.dev")}>
@@ -44,7 +41,13 @@ const Bio = () => {
         </Button>
         <Button colorScheme={"orange"} leftIcon={<FaLinkedin />}>
           <Center>
-            <Text>LinkedIn</Text>
+            <Text
+              onClick={() =>
+                window.open("https://www.linkedin.com/in/rohit-j-32824a242/")
+              }
+            >
+              LinkedIn
+            </Text>
           </Center>
         </Button>
       </HStack>
