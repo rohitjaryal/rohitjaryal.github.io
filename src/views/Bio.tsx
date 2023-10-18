@@ -53,6 +53,7 @@ const Bio = () => {
       </HStack>
 
       <VStack paddingTop="40px" spacing="2" alignItems="flex-start">
+        <Center color="green">New UI in progress. Coming soon :) ...</Center>
         <Heading as="h3" fontSize="x-large">
           Heya, I'm Rohit Jaryal
         </Heading>
